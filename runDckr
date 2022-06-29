@@ -1,0 +1,40 @@
+#!/bin/bash
+
+export DockProjDIR="/home/jbadmin/DockerProj/FLOW/frontend"
+
+usage(){
+
+cat<<ENDCAT
+ 
+ runDckr <CID>
+
+ this script intended to run "frontend"
+
+ENDCAT
+
+echo -e "\n\n================================================================================="
+echo -e "====== Note the following image options:"
+docker images |head -8
+echo -e "================================================================================="
+
+exit 2
+}
+
+
+
+
+#########################3
+### MAIN
+
+if [ $# != 1 ]
+then
+  usage
+fi
+
+cd $DockProjDIR
+echo "docker run -p 3000:3000 -v $PWD/node_modules:/app/node_modules -v $PWD:/app ${1}"
+
+
+
+
+
