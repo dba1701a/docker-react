@@ -8,5 +8,5 @@ before_install:
 
 script:
   - docker run dba1701a/docker-react npm run test -- --coverage
-#  - docker run -e CI=true dba1701a/docker-react npm run tests
+  - docker run -e CI=true dba1701a/docker-react npm run test -- --coverage
 
